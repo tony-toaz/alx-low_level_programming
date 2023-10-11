@@ -12,38 +12,19 @@ int main(void)
 	int next;
 	int count = 0;
 
-	_putchar(first + '0');
-	_putchar(',');
-	_putchar(' ');
-	_putchar(second + '0');
+	printf("%d, %d", first, second);
 	count += 2;
 
 	while (count < 98)
 	{
 		next = first + second;
-		_putchar(',');
-		_putchar(' ');
-		int temp = next;
-		int numDigits = 0;
-
-		while (temp > 0)
-		{
-			temp /= 10;
-			numDigits++;
-		}
-		temp = next;
-		while (numDigits > 0)
-		{
-			_putchar(temp / power(10, numDigits - 1) + '0');
-			temp %= power(10, numDigits - 1);
-			numDigits--;
-		}
+		printf(", %d", next);
 		count++;
 
 		first = second;
 		second = next;
 	}
 
-	_putchar('\n');
+	printf("\n");
 	return (0);
 }
