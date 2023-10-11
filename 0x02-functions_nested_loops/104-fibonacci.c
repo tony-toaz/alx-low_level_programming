@@ -8,18 +8,18 @@
 
 int main(void)
 {
-	int first = 1;
-	int second = 2;
-	int next;
-	int count = 0;
+	unsigned long first = 1;
+	unsigned long second = 2;
+	unsigned long next;
+	unsigned long count = 0;
 
-	printf("%d, %d", first, second);
+	printf("%lu, %lu", first, second);
 	count += 2;
 
 	while (count < 98)
 	{
 		next = first + second;
-		printf(", %d", next);
+		printf(", %lu", next);
 		count++;
 
 		first = second;
