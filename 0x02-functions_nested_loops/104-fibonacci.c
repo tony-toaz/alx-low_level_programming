@@ -8,21 +8,17 @@
 
 int main(void)
 {
-	unsigned long first = 1;
-	unsigned long second = 2;
-	unsigned long next;
-	unsigned long count = 0;
+	unsigned long a = 1, b = 2, tmp;
+	int i;
 
-	printf("1, 2");
+	printf("%lu", a);
 
-	while (count < 97)
+	for (i = 1; i < 98; i++)
 	{
-		next = first + second;
-		printf(", %lu", next);
-		count++;
-
-		first = second;
-		second = next;
+		printf(", %lu", a + b);
+		tmp = a;
+		a = b;
+		b = tmp + b;
 	}
 
 	printf("\n");
