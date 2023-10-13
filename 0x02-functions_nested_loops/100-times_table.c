@@ -1,52 +1,44 @@
 #include "main.h"
 /**
- * prints times tables
- * @int n parameter to be checked
+ * print_times_table - prints times tables
+ * @n: parameter to be checked
  * Return: void
  */
 
-
-
 void print_times_table(int n)
 {
-	if (n < 0 || n > 15)
-		return;
+	int number, multiplication, product;
 
-	int i;
-	int j;
-	int result;
-
-	for (i = 0; i <= n; i++)
+	if (n >= 0 && n <= 15)
 	{
-		for (j = 0; j <= n; j++)
+		for (number = 0; number <= n; number++)
 		{
-			result = i * j;
+			_putchar('0');
 
-			if (j > 0)
+			for (multiplication = 1; multiplication <= n; multiplication++)
 			{
 				_putchar(',');
 				_putchar(' ');
-			}
 
-			if (result < 10)
-			{
-				_putchar(' ');
-				_putchar(' ');
-				_putchar((result % 10) + '0');
+				product = number * multiplication;
+
+				if (product <= 99)
+					_putchar(' ');
+				if (product <= 9)
+					_putchar(' ');
+
+				if (product >= 100)
+				{
+					_putchar((product / 100) + '0');
+					_putchar(((product / 10)) % 10 + '0');
+				}
+				else if (product <= 99 && product >= 10)
+				{
+					_putchar((product / 10) + '0');
+				}
+				_putchar((product % 10) + '0');
 			}
-			else if (result < 100)
-			{
-				_putchar(' ');
-				_putchar((result / 10) + '0');
-				_putchar((result % 10) + '0');
-			}
-			else
-			{
-				_putchar((result / 100) + '0');
-				_putchar((result / 10) % 10 + '0');
-				_putchar((result % 10) + '0');
-			}
+			_putchar('\n');
 		}
-		_putchar('\n');
 	}
 }
