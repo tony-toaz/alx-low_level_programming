@@ -1,31 +1,32 @@
 #include "main.h"
 
 /**
- * _strcpy - Appends a string to a destination buffer
- * @dest: destination buffer
- * @src: source string to append
- * Return: A pointer to the end of the destination buffer
+ * _strcat - Concatenates the source string to the destination string
+ * @dest: Pointer to the destination buffer.
+ * @src: Pointer to the source string to be concatenated.
+ * Return: A pointer to the destination buffer (dest).
  */
 char *_strcpy(char *dest, char *src)
 {
 	int dest_len = 0;
-	int i;
+	int src_len = 0;
+	int i, j;
 
 	while (dest[dest_len] != '\0')
 	{
 		dest_len++;
 	}
 
-
-	while (src[i] != '\0')
+	while (src[src_len] != '\0')
 	{
-		dest[dest_len] = src[i];
-		dest_len++;
-		i++;
+		src_len++;
 	}
 
-	dest[dest_len] = '\0';
+	for (i = 0, j = dest_len; i < src_len; i++, j++)
+	{
+		dest[j] = src[i];
+	}
 
-	return (dest + dest_len);
+	dest[dest_len + src_len] = '\0';
+	return (dest);
 }
-
