@@ -3,7 +3,7 @@
 /**
  * _strpbrk - searches for a set of bytes in a string
  * @s: string to search from
- * @acceptr: string to search in s
+ * @accept: string to search in s
  * Return: accept or NULL
  */
 char *_strpbrk(char *s, char *accept)
@@ -15,8 +15,10 @@ char *_strpbrk(char *s, char *accept)
 			while (*a != '\0')
 			{
 				if (*s == *a)
-			return (s);
-		a++;
+				{
+					return (s);
+				}
+			a++;
 			}
 		s++;
 	}
